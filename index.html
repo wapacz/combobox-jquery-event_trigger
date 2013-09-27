@@ -6,19 +6,23 @@
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-	<script src="combobox_wrapper.js"></script>
-	<link rel="stylesheet" href="combobox_wrapper.css" />
+	<script src="combobox.js"></script>
+	<link rel="stylesheet" href="combobox.css" />
 	<script>
 		$(function() {
-			$( "#combobox" ).change(function() {
+			$( "#combobox1, #combobox2" ).change(function() {
 				alert($(this).val());
 			});
-			$( "#combobox" ).combobox_wrapper();
+			$( "#combobox1" ).combobox();
+			$( "#combobox1" ).combobox("update");
+			
+			$( "#combobox2" ).combobox({openToUp:true});
+			$( "#combobox2" ).combobox("update");			
 		});
 	</script>
 </head>
 <body>
-	<select id="combobox">
+	<select id="combobox1">
 		<option value="">Select one...</option>
 		<option value="ActionScript">ActionScript</option>
 		<option value="AppleScript">AppleScript</option>
@@ -42,6 +46,31 @@
 		<option value="Ruby">Ruby</option>
 		<option value="Scala">Scala</option>
 		<option value="Scheme">Scheme</option>
-	</select>
+	</select><br /><br/>
+	<select id="combobox2">
+		<option value="">Select one...</option>
+		<option value="ActionScript">ActionScript</option>
+		<option value="AppleScript">AppleScript</option>
+		<option value="Asp">Asp</option>
+		<option value="BASIC">BASIC</option>
+		<option value="C">C</option>
+		<option value="C++">C++</option>
+		<option value="Clojure">Clojure</option>
+		<option value="COBOL">COBOL</option>
+		<option value="ColdFusion">ColdFusion</option>
+		<option value="Erlang">Erlang</option>
+		<option value="Fortran">Fortran</option>
+		<option value="Groovy">Groovy</option>
+		<option value="Haskell">Haskell</option>
+		<option value="Java">Java</option>
+		<option value="JavaScript">JavaScript</option>
+		<option value="Lisp">Lisp</option>
+		<option value="Perl">Perl</option>
+		<option value="PHP">PHP</option>
+		<option value="Python">Python</option>
+		<option value="Ruby">Ruby</option>
+		<option value="Scala">Scala</option>
+		<option value="Scheme">Scheme</option>
+	</select>	
 </body>
 </html>
